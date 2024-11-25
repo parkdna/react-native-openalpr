@@ -9,6 +9,9 @@
 #import "ALPRCamera.h"
 #import "ALPRCameraManager.h"
 #import <React/RCTLog.h>
+#import <React/RCTViewManager.h>
+#import <React/RCTUIManager.h>
+#import <React/RCTEventEmitter.h>
 #import <React/RCTUtils.h>
 
 #import <React/UIView+React.h>

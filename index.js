@@ -13,11 +13,11 @@ const ALPRCamera = requireNativeComponent('ALPRCamera', Camera, {
 
 class Camera extends Component {
   onPlateRecognized = ({ nativeEvent }) =>
-    this.props.onPlateRecognized(nativeEvent)
+      this.props.onPlateRecognized(nativeEvent)
 
   render() {
     return (
-      <ALPRCamera {...this.props} onPlateRecognized={this.onPlateRecognized} />
+        <ALPRCamera {...this.props} onPlateRecognized={this.onPlateRecognized} />
     )
   }
 }

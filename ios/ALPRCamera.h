@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <React/RCTBridge.h>
-#import <React/RCTEventDispatcher.h>
+#import <React/RCTUIManager.h>
+#import <React/RCTEventEmitter.h>
 #import <React/RCTUtils.h>
 #import <React/RCTLog.h>
 #import <React/UIView+React.h>
@@ -21,6 +22,7 @@
 
 @interface ALPRCamera : UIView
 
+@property (nonatomic, copy) RCTDirectEventBlock onZoomChanged;
 @property (nonatomic, copy) RCTBubblingEventBlock onPlateRecognized;
 
 - (id)initWithManager:(ALPRCameraManager*)manager bridge:(RCTBridge *)bridge;

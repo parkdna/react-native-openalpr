@@ -164,6 +164,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -289,6 +290,7 @@
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(PROJECT_DIR)/Frameworks/**",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNOpenAlpr;
@@ -312,6 +314,7 @@
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(PROJECT_DIR)/Frameworks/**",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNOpenAlpr;

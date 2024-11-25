@@ -9,7 +9,9 @@
 #import "ALPRCameraManager.h"
 #import "ALPRCamera.h"
 #import <React/RCTBridge.h>
-#import <React/RCTEventDispatcher.h>
+#import <React/RCTViewManager.h>
+#import <React/RCTUIManager.h>
+#import <React/RCTEventEmitter.h>
 #import <React/RCTUtils.h>
 #import <React/RCTLog.h>
 #import <React/UIView+React.h>
@@ -333,7 +335,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //        NSDate *date = [NSDate date];
         
         [[PlateScanner sharedInstance] scanImage:src onSuccess:^(PlateResult *result) {
-            if (result && self.camera.onPlateRecognized) {
+                if (result && self.camera.onPlateRecognized) {
                 self.camera.onPlateRecognized(@{
                     @"confidence": @(result.confidence),
                     @"plate": result.plate
@@ -578,13 +580,19 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             zoomFactor = 1.0f;
         }
 
-        NSDictionary *event = @{
-          @"target": reactTag,
-          @"zoomFactor": [NSNumber numberWithDouble:zoomFactor],
-          @"velocity": [NSNumber numberWithDouble:velocity]
+         NSDictionary *event = @{
+            @"zoomFactor": @(zoomFactor),
+            @"velocity": @(velocity)
         };
 
-        [self.bridge.eventDispatcher sendAppEventWithName:@"zoomChanged" body:event];
+        device.videoZoomFactor = zoomFactor;
+        [device unlockForConfiguration];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+             if (self.camera.onZoomChanged) {
+                 self.camera.onZoomChanged(event);
+             }
+         });
 
         device.videoZoomFactor = zoomFactor;
         [device unlockForConfiguration];
