@@ -1,5 +1,5 @@
 > [!WARNING]  
-> This fork is only compatible with IOS. Compatibility with Android devices is not guranteed
+> This fork is only compatible with IOS. Compatibility with Android devices is not guranteed. 
 > Tested on react-native 0.72.12
 
 [![Build Status](https://travis-ci.com/RobertSasak/react-native-openalpr.svg?branch=master)](https://travis-ci.com/RobertSasak/react-native-openalpr)
