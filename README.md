@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This fork is only compatible with IOS. Compatibility with Android devices is not guranteed
+
 [![Build Status](https://travis-ci.com/RobertSasak/react-native-openalpr.svg?branch=master)](https://travis-ci.com/RobertSasak/react-native-openalpr)
 [![Gitter](https://badges.gitter.im/react-native-openalpr/community.svg)](https://gitter.im/react-native-openalpr/community)
 
